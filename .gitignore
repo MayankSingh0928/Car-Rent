@@ -33,7 +33,6 @@ Thumbs.db
 
 # React-specific ignores
 client/node_modules/
-client/build/
 client/.env
 
 # Misc
