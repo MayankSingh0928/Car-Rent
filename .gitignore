@@ -38,3 +38,6 @@ client/.env
 # Misc
 *.bak
 *.swp
+
+# Local Netlify folder
+.netlify
