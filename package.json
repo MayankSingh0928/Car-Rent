@@ -12,7 +12,7 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "node server.js",
-    "build": "npm run build --prefix client"
+    "build": "concurrently \"npm run build --prefix client\" \"npm run dev\""
   },
   "author": "Mayank",
   "license": "ISC",
