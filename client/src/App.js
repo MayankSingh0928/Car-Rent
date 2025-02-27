@@ -12,7 +12,7 @@ import AddCar from './pages/AddCar';
 import AdminHome from './pages/AdminHome';
 import EditCar from './pages/EditCar';
 import About from './pages/About';
-
+import LoginAdmin from './pages/LoginAdmin';
 function App() {
   return (
     <div className="App">
@@ -31,6 +31,7 @@ function App() {
             <Route path="/addcar" element={<AddCar />} />
             <Route path="/editcar/:carid" element={<EditCar />} />
             <Route path="/admin" element={<AdminHome />} />
+            <Route path='/loginadmin' element={<LoginAdmin />}/>
           </Route>
         </Routes>
       </BrowserRouter>

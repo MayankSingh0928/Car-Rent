@@ -34,7 +34,7 @@ function DefaultLayout(props){
         {
           key: '3',
           label: (
-            <a  href="/admin">
+            <a  href="/loginadmin">
                 Admin
             </a>
           ),

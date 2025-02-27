@@ -33,5 +33,21 @@ router.post("/register", async(req, res)=>{
 
 });
 
+router.post("/loginadmin", async(req, res)=>{
+
+    const {username,password} = req.body
+    try{
+        const user = await User.findOne({username , password})
+        if (user.username === 'Mayank') {
+            res.send(user)
+        } else {
+            return res.status(400).json(error);
+        }
+    }catch(error){
+        return res.status(400).json(error);
+
+    }
+
+});
 
 module.exports = router

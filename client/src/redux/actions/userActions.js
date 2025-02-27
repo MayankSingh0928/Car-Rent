@@ -44,3 +44,23 @@ export const userRegister=(reqObj)=>async dispatch=>{
 
     }
 }
+
+export const userLoginAdmin=(reqObj)=>async dispatch=>{
+    dispatch({type : 'LOADING', payload:true})
+    try{
+        const response = await axios.post('/api/users/loginadmin',reqObj)
+        localStorage.setItem('user', JSON.stringify(response.data))
+        message.success('Login Successfull');
+        setTimeout(()=>{
+            window.location.href='/admin'
+        },1000);
+        dispatch({type : 'LOADING', payload:false})
+
+    }catch(error){
+        console.log(error)
+        message.error('Invalid Caredential')
+        dispatch({type : 'LOADING', payload:false})
+
+
+    }
+}
