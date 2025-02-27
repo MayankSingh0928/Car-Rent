@@ -1,5 +1,5 @@
 import React from 'react';
-import{Row,Col,Form,Input} from 'antd'
+import{Row,Col,Form,Input,Button} from 'antd'
 import{Link} from 'react-router-dom'
 import {useDispatch , useSelector} from 'react-redux'
 import { userRegister } from '../redux/actions/userActions';
@@ -29,17 +29,25 @@ function Register(){
                             
                             <h1>Registration</h1>
                             <hr/>
-                            <Form.Item name="username" label="Username" rules={[{required: true}]}>
-                                <Input/>
+                            <Form.Item name="username" label="Username" rules={[{required: true, message: 'Please enter your username!' }]}>
+                                <Input placeholder="Enter your username"/>
                             </Form.Item>
-                            <Form.Item name="password" label="Password" rules={[{required: true}]}>
-                                <Input/>
+                            <Form.Item name="password" label="Password" rules={[{required: true, message: 'Please enter your password!' }]}>
+                                <Input.Password placeholder="Enter your password" />
                             </Form.Item>
-                            <Form.Item name="cpassword" label="Confirm Password" rules={[{required: true}]}>
-                                <Input/>
+                            <Form.Item name="cpassword" label="Confirm Password" rules={[{required: true, message: 'Please confirm your password!' },
+                            ({ getFieldValue }) => ({
+                                    validator(_, value) {
+                                        if (!value || getFieldValue('password') === value) {
+                                            return Promise.resolve();
+                                        }
+                                        return Promise.reject(new Error('Passwords do not match!'));
+                                    },
+                                }),
+                            ]}>
+                                <Input.Password placeholder="Confirm your password" />
                             </Form.Item>
-                            <button className='btn mt - 2 mb - 3'>Register</button>
-                            <br/>
+                            <Button type="primary" htmlType="submit" className='btn mt-2 mb-3' disabled={loading}>Register</Button>                            <br/>
 
                             <Link to="/login">Click here to Login</Link>
                         </Form>

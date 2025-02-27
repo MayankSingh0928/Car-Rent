@@ -1,25 +1,7 @@
 
 import axios from 'axios';
+import { message } from 'antd';
 
-
-const showToast = (message, type = "success") => {
-  const toast = document.createElement("div");
-  toast.innerText = message;
-  toast.style.position = "fixed";
-  toast.style.bottom = "20px";
-  toast.style.right = "20px";
-  toast.style.background = type === "success" ? "green" : "red";
-  toast.style.color = "white";
-  toast.style.padding = "10px 20px";
-  toast.style.borderRadius = "5px";
-  toast.style.zIndex = "1000";
-  document.body.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = "0";
-    setTimeout(() => document.body.removeChild(toast), 500);
-  }, 3000); // Auto-hide after 3 seconds
-};
 
 let cachedCars = null; // Cache to store car data and avoid multiple requests
 
@@ -57,7 +39,7 @@ export const addCar=(reqObj)=>async dispatch=>{
        await axios.post('/api/cars/addcar' , reqObj)
      
        dispatch({type: 'LOADING' , payload:false})
-       showToast('New car added successfully','success')
+       message.success('New car added successfully')
        setTimeout(() => {
           window.location.href='/admin'
        }, 1000);
@@ -76,7 +58,7 @@ export const editCar=(reqObj)=>async dispatch=>{
        await axios.post('/api/cars/editcar' , reqObj)
      
        dispatch({type: 'LOADING' , payload:false})
-       showToast('Car edited successfully','success')
+       message.success('Car edited successfully')
        setTimeout(() => {
           window.location.href='/admin'
        }, 1000);
@@ -95,7 +77,7 @@ export const deleteCar=(reqObj)=>async dispatch=>{
        await axios.post('/api/cars/deletecar' , reqObj)
      
        dispatch({type: 'LOADING' , payload:false})
-       showToast('Car deleted successfully','success')
+       message.success('Car deleted successfully')
        setTimeout(() => {
           window.location.reload()
        }, 1000);

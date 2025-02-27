@@ -1,30 +1,11 @@
 import axios from 'axios';
 import { message } from 'antd';
-
-const showToast = (message, type = "success") => {
-    const toast = document.createElement("div");
-    toast.innerText = message;
-    toast.style.position = "fixed";
-    toast.style.bottom = "20px";
-    toast.style.right = "20px";
-    toast.style.background = type === "success" ? "green" : "red";
-    toast.style.color = "white";
-    toast.style.padding = "10px 20px";
-    toast.style.borderRadius = "5px";
-    toast.style.zIndex = "1000";
-    document.body.appendChild(toast);
-  
-    setTimeout(() => {
-      toast.style.opacity = "0";
-      setTimeout(() => document.body.removeChild(toast), 500);
-    }, 3000); // Auto-hide after 3 seconds
-  };
 export const userLogin=(reqObj)=>async dispatch=>{
     dispatch({type : 'LOADING', payload:true})
     try{
         const response = await axios.post('/api/users/login',reqObj)
         localStorage.setItem('user', JSON.stringify(response.data))
-        showToast('Login successfully', 'success');
+        message.success('Login Successfull');
         setTimeout(()=>{
             window.location.href='/'
         },1000);
@@ -32,8 +13,7 @@ export const userLogin=(reqObj)=>async dispatch=>{
 
     }catch(error){
         console.log(error)
-        
-        showToast('Something went wrong', 'error');
+        message.error('Invalid Caredential')
         dispatch({type : 'LOADING', payload:false})
 
 
