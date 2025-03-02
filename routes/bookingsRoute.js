@@ -59,5 +59,15 @@ router.get("/getallbookings", async (req, res) => {
         res.status(500).json({ message: "Internal Server Error", error });
     }
 });
-
+router.post('/deletebooking', async (req, res) => {
+    const { bookingId } = req.body;
+  
+    try {
+      await Booking.findByIdAndDelete(bookingId);
+      res.status(200).send('Booking deleted successfully');
+    } catch (error) {
+      res.status(500).send('Error deleting booking');
+    }
+  });
+  
 module.exports = router;
