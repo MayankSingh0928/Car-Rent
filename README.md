@@ -58,12 +58,66 @@ A full-stack car rental platform that enables users to browse, select, and book 
 2. **Install dependencies:**
 
    **Backend:**
-   
    ```bash
    npm install
-
-   **Frontend:**   
+   ```
+   **Frontend:**
+   
    ```bash
    cd client
    npm install
+   ```
+3. **Run the development servers:**
+
+   **Backend:**
+   
+   ```bash
+   npm run dev
+   ```
+   **Frontend:**
+   
+   ```bash
+   cd client
+   npm start
+   ```
+## 📁 Project Structure
+
+   Car-Rent/
+   ├── client/               # React frontend
+   │   ├── public/
+   │   └── src/
+   │       ├── components/
+   │       ├── pages/
+   │       └── App.js
+   ├── models/               # Mongoose models
+   ├── routes/               # Express routes
+   ├── db.js                 # Database connection
+   ├── server.js             # Entry point for backend
+   ├── package.json
+   └── README.md
+## 📌 Roadmap / Future Enhancements
+ Payment Integration (e.g., Stripe)
+
+ Google Maps integration for location selection
+
+ Real-time car availability tracking
+
+ Admin dashboard for managing fleet and bookings
+
+ User reviews and ratings
+
+🙌 Contributing
+Contributions are welcome! Please fork the repository and submit a pull request for any enhancements or bug fixes.
+
+📄 License
+This project is licensed under the MIT License.
+
+## 👤 Author
+   **Mayank Singh**
+   
+
+
+
+ 
+
 
