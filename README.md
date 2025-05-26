@@ -8,7 +8,7 @@ A full-stack car rental platform that enables users to browse, select, and book 
 
 ## 📸 Preview
 
-![Car Rental Screenshot](preview-image-url-if-available)
+🌐[Car Rental Screenshot](preview-image-url-if-available)
 
 ---
 
