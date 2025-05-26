@@ -54,3 +54,16 @@ A full-stack car rental platform that enables users to browse, select, and book 
    ```bash
    git clone https://github.com/MayankSingh0928/Car-Rent.git
    cd Car-Rent
+
+2. **Install dependencies:**
+
+   **Backend:**
+   
+   ```bash
+   npm install
+   
+ **Frontend:**   
+   ```bash
+   cd client
+   npm install
+
