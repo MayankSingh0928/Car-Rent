@@ -61,8 +61,8 @@ A full-stack car rental platform that enables users to browse, select, and book 
    
    ```bash
    npm install
-   
- **Frontend:**   
+
+   **Frontend:**   
    ```bash
    cd client
    npm install
