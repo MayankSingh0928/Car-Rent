@@ -81,7 +81,7 @@ A full-stack car rental platform that enables users to browse, select, and book 
    npm start
    ```
 ## 📁 Project Structure
-
+   ```php
    Car-Rent/
    ├── client/               # React frontend
    │   ├── public/
@@ -95,6 +95,7 @@ A full-stack car rental platform that enables users to browse, select, and book 
    ├── server.js             # Entry point for backend
    ├── package.json
    └── README.md
+   ```
 ## 📌 Roadmap / Future Enhancements
  Payment Integration (e.g., Stripe)
 
