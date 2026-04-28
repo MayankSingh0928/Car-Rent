@@ -2,13 +2,20 @@ const express = require("express");
 const router = express.Router();
 const Booking = require("../models/bookingModel");
 const Car = require("../models/carModel");
-const stripe = require('stripe')('sk_test_51Qo01UHOpEmURzPQKPfugPU9o6p8s1QOXbKeg7vQyVpmooT3mfosthoimDQZPJBQEvt13n8WyBOkECqAp0TuJdI7000lIQcWLj')
+const createStripeClient = () => {
+    if (!process.env.STRIPE_SECRET_KEY) {
+        throw new Error("STRIPE_SECRET_KEY is required to process bookings");
+    }
+
+    return require('stripe')(process.env.STRIPE_SECRET_KEY);
+};
 const { v4: uuidv4 } = require('uuid');
 router.post("/bookcar",async(req,res)=>{
 
 
     const {token} = req.body
     try {
+        const stripe = createStripeClient();
 
         const customer = await stripe.customers.create({
             email : token.email,
