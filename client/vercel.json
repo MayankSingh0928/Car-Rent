@@ -1,7 +1,11 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api/.*).*)",
+      "source": "/api/:path*",
+      "destination": "https://car-rent-nl0y.onrender.com/api/:path*"
+    },
+    {
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ]
