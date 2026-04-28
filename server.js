@@ -42,28 +42,33 @@ const isAllowedOrigin = (origin) => {
 
 app.use(express.json());
 app.use((req, res, next) => {
-    const origin = req.headers.origin;
+  const origin = req.headers.origin;
 
-    if (isAllowedOrigin(origin)) {
-        if (origin) {
-            res.setHeader('Access-Control-Allow-Origin', origin);
-        }
-
-        res.setHeader('Vary', 'Origin');
-        res.setHeader('Access-Control-Allow-Credentials', 'true');
-        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-
-        if (req.method === 'OPTIONS') {
-            return res.sendStatus(204);
-        }
-
-        return next();
+  if (isAllowedOrigin(origin)) {
+    if (origin) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
     }
 
-    return res.status(403).json({ message: 'Not allowed by CORS' });
-});
+    res.setHeader("Vary", "Origin");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Content-Type, Authorization, Cache-Control"
+    );
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+    );
 
+    if (req.method === "OPTIONS") {
+      return res.sendStatus(204);
+    }
+
+    return next();
+  }
+
+  return res.status(403).json({ message: "Not allowed by CORS" });
+});
 
 app.use('/api/cars/', require('./routes/carsRoute'))
 app.use('/api/users/', require('./routes/usersRoute'))
