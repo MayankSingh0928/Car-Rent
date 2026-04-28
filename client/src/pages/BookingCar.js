@@ -39,6 +39,14 @@ function BookingCar() {
     }, [car.bookedTimeSlots]);
 
     function selectTimeSlots(values) {
+        if (!values || values.length !== 2) {
+            setHoursDifference(0);
+            setFrom(null);
+            setTo(null);
+            setTotalAmount(0);
+            return;
+        }
+
         const startDate = new Date(values[0]);
         const endDate = new Date(values[1]);
         const hoursDiff = differenceInHours(endDate, startDate);
@@ -49,9 +57,15 @@ function BookingCar() {
     }
 
     function onToken(token) {
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        if (!user?._id || !car?._id || !from || !to || totalAmount <= 0) {
+            return;
+        }
+
         const reqObj = {
             token,
-            user: JSON.parse(localStorage.getItem('user'))._id,
+            user: user._id,
             car: car._id,
             hoursDifference,
             totalAmount,
@@ -95,7 +109,7 @@ function BookingCar() {
                                     currency='inr'
                                     amount={totalAmount * 100}
                                     stripeKey="pk_test_51Qo01UHOpEmURzPQmgd92NZkVQa0T2sLTTWEEwjsp5uueRYoEmoiRpAGHCk9zCRIxQh3MwGNDgk2jYngiVqeSpz800iJJMzGhA">
-                                    <button className='btn1'>Book Now</button>
+                                    <button className='btn1' disabled={totalAmount <= 0}>Book Now</button>
                                 </StripeCheckout>
                             </div>
                         )

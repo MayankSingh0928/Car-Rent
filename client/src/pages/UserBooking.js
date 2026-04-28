@@ -20,6 +20,17 @@ function UserBooking() {
   const handleDelete = (bookingId) => {
     dispatch(deleteBooking(bookingId));
   };
+  const getBookingUserId = (bookingUser) => {
+    if (!bookingUser) {
+      return "";
+    }
+
+    if (typeof bookingUser === "string") {
+      return bookingUser;
+    }
+
+    return bookingUser._id || bookingUser.$oid || "";
+  };
 
   return (
     <DefaultLayout>
@@ -27,7 +38,7 @@ function UserBooking() {
       <h3 className="text-center mt-2">My Bookings</h3>
       <Row justify="center" gutter={16}>
         <Col lg={16} sm={24}>
-          {bookings.filter(o => o.user === user._id).map((booking) => {
+          {bookings.filter(o => getBookingUserId(o.user) === user._id).map((booking) => {
             return (
               <Row gutter={16} className="bs1 mt-3 text-left" key={booking._id}>
                 <Col lg={6} sm={24}>

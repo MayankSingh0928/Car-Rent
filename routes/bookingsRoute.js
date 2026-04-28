@@ -15,6 +15,24 @@ router.post("/bookcar",async(req,res)=>{
 
     const {token} = req.body
     try {
+        if (!token?.id || !token?.email) {
+            return res.status(400).json({ message: "Payment token is missing. Please retry checkout." });
+        }
+
+        if (!req.body.user || !req.body.car || !req.body.bookedTimeSlots?.from || !req.body.bookedTimeSlots?.to) {
+            return res.status(400).json({ message: "Booking details are incomplete. Please select the car and time again." });
+        }
+
+        const totalAmount = Number(req.body.totalAmount);
+        if (!Number.isFinite(totalAmount) || totalAmount <= 0) {
+            return res.status(400).json({ message: "Invalid booking amount. Please select a valid time slot." });
+        }
+
+        const car = await Car.findOne({_id : req.body.car})
+        if (!car) {
+            return res.status(404).json({ message: "Selected car was not found." });
+        }
+
         const stripe = createStripeClient();
 
         const customer = await stripe.customers.create({
@@ -23,7 +41,7 @@ router.post("/bookcar",async(req,res)=>{
         })
 
         const payment = await stripe.charges.create({
-            amount : req.body.totalAmount * 100,
+            amount : Math.round(totalAmount * 100),
             currency : 'inr',
             customer : customer.id,
             receipt_email : token.email
@@ -32,25 +50,26 @@ router.post("/bookcar",async(req,res)=>{
         })
 
         if(payment){
-            req.body.transactionId = payment.source.id
+            req.body.transactionId = payment.id
             const newbooking = new Booking(req.body)
             await newbooking.save()
-            const car = await Car.findOne({_id : req.body.car})
-            // console.log(req.body.car)
 
-            car.bookedTimeSlots = (req.body.bookedTimeSlots)
+            car.bookedTimeSlots.push(req.body.bookedTimeSlots)
             await car.save()
-            res.send('Your booking is successfull')
+            res.send('Your booking is successful')
         }
         else{
-            return res.status(400).json(error);
+            return res.status(400).json({ message: "Payment could not be completed. Please try again." });
         }
 
        
 
     } catch (error) {
         console.log(error)
-        return res.status(400).json(error);
+        const statusCode = error.type === "StripeCardError" ? 402 : 400;
+        return res.status(statusCode).json({
+            message: error.message || "Booking failed. Please try again."
+        });
     }
 
    

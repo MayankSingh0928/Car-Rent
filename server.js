@@ -14,17 +14,37 @@ const normalizeOrigin = (value) => {
         return value;
     }
 };
+const parseOrigins = (value) => (
+    value
+        ? value.split(',').map((origin) => normalizeOrigin(origin.trim())).filter(Boolean)
+        : []
+);
 const allowedOrigins = [
-    process.env.FRONT_END,
-    process.env.CLIENT_URL,
-    'http://localhost:3000'
-].map(normalizeOrigin).filter(Boolean);
+    ...parseOrigins(process.env.FRONT_END),
+    ...parseOrigins(process.env.CLIENT_URL),
+    'http://localhost:3000',
+    'http://127.0.0.1:3000'
+];
+const isAllowedOrigin = (origin) => {
+    if (!origin) {
+        return true;
+    }
+
+    const normalizedOrigin = normalizeOrigin(origin);
+
+    return (
+        allowedOrigins.includes(normalizedOrigin) ||
+        /^https?:\/\/localhost(:\d+)?$/i.test(normalizedOrigin) ||
+        /^https?:\/\/127\.0\.0\.1(:\d+)?$/i.test(normalizedOrigin) ||
+        /^https:\/\/[a-z0-9-]+\.vercel\.app$/i.test(normalizedOrigin)
+    );
+};
 
 app.use(express.json());
 app.use((req, res, next) => {
     const origin = req.headers.origin;
 
-    if (!origin || allowedOrigins.includes(origin)) {
+    if (isAllowedOrigin(origin)) {
         if (origin) {
             res.setHeader('Access-Control-Allow-Origin', origin);
         }

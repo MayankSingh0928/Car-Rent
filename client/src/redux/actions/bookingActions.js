@@ -5,7 +5,11 @@ export const bookCar = (reqObj) => async (dispatch) => {
   dispatch({ type: 'LOADING', payload: true });
 
   try {
-    await api.post('/api/bookings/bookcar', reqObj);
+    const response = await api.post('/api/bookings/bookcar', reqObj);
+    if (response.data !== 'Your booking is successful') {
+      throw new Error('Booking was not confirmed by the server');
+    }
+
     dispatch({ type: 'LOADING', payload: false });
     message.success('Your car booked successfully');
     setTimeout(() => {
@@ -14,7 +18,7 @@ export const bookCar = (reqObj) => async (dispatch) => {
   } catch (error) {
     console.error(error);
     dispatch({ type: 'LOADING', payload: false });
-    message.error('Please try later');
+    message.error(error.response?.data?.message || error.message || 'Please try later');
   }
 };
 
