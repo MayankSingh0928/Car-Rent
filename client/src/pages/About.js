@@ -11,7 +11,7 @@ function About(){
                     <div class="row">
                         <div class="col-md-12">
                             <h1>About Us</h1>
-                            <span>Our professional Developers</span>
+                            <span>Meet the people behind smoother rentals</span>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@ function About(){
                         <div class="col-md-12">
                             <div class="section-heading">
                                 <h2>Our team <em>members</em></h2>
-                                <span>Suspendisse a ante in neque iaculis lacinia</span>
+                                <span>A focused team building a simpler way to book cars</span>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -31,7 +31,7 @@ function About(){
                                 <div class="down-content">
                                     <h4>Mayank Singh</h4>
                                     <span>Founder</span>
-                                    <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                                    <p>Leads product direction, customer experience, and the service standards behind every booking.</p>
 
                                     <p style={{textAlign:'left'}}>
                                     <Link to="https://www.instagram.com/mr._mayanksingh/"><InstagramOutlined /><b>    Click to know about me!</b></Link>
@@ -45,7 +45,7 @@ function About(){
                             <div class="down-content">
                                 <h4>Anurag</h4>
                                 <span>Chief Marketing Officer</span>
-                                <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                                <p>Shapes rental offers, customer communication, and partnerships that keep the fleet easy to access.</p>
                                 <p style={{textAlign:'left'}}>
                                 <Link to="https://www.instagram.com/mr._mayanksingh/"><InstagramOutlined /><b>  Click to know about me!</b></Link>
                                 </p>
@@ -58,7 +58,7 @@ function About(){
                                 <div class="down-content">
                                     <h4>Ambar Gupta</h4>
                                     <span>Financial Analyst</span>
-                                    <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                                    <p>Tracks pricing, booking performance, and operational quality so customers get fair value.</p>
                                     <p style={{textAlign:'left'}}>
                                         <Link to="https://www.instagram.com/mr._mayanksingh/"><InstagramOutlined /><b>  Click to know about me!</b></Link>
                                     </p>

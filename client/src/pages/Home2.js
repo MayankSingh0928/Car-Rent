@@ -83,8 +83,13 @@ function Home2(){
     return(
         <DefaultLayout>
             <div className='home2'>
-                <Row className='mt-5' justify={'center'}>
-                    <Col lg ={20} sm={24} className='d-flex justify-content-left'>
+                <Row className='mt-5 fleet-heading' justify={'center'}>
+                    <Col lg ={20} sm={24} className='d-flex justify-content-between fleet-toolbar'>
+                        <div className="section-intro">
+                            <span>Available fleet</span>
+                            <h1><b>Choose the car that fits your plan</b></h1>
+                            <p>Filter by your trip time, then book a verified car at a clear hourly rate.</p>
+                        </div>
 
                         <RangePicker showTime={{format : 'HH:mm'}} format='MMM DD YYYY HH:mm' onChange={setFilter}/>
                     
@@ -101,8 +106,8 @@ function Home2(){
                                     <img src={car.image} className='carimg' alt={car.name} />
                                     <div className='car-content d-flex align-items-center justify-content-between'>
                                         <div style={{ textAlign: "left" }}>
-                                            <p>{car.name}</p>
-                                            <p>Rent Per Hour {car.rentPerHour}/-</p>
+                                            <p><b>{car.name}</b></p>
+                                            <p>Rent Per Hour <b>{car.rentPerHour}</b>/-</p>
                                         </div>
                                         <div>
                                             <Button className='btn1 mr-2'>

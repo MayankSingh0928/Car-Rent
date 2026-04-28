@@ -76,7 +76,7 @@ function HomeLayout(props){
           {/* <Row gutter={16} justify={'center'}>
               <Col lg={20} sm={24} xs={24}>
                     <div className='d-flex justify-content-between'>
-                      <h1><b><Link to='/' style={{color: "orangered"}}>Cars Rental</Link></b></h1>
+                      <h1><b><Link to='/' style={{color: "orangered"}}>Car Rental</Link></b></h1>
                       <Dropdown menu={{items,}} placement="bottomRight" arrow={{pointAtCenter: true,}}>
                         <Button>{user.username}</Button>
                       </Dropdown>
@@ -90,7 +90,7 @@ function HomeLayout(props){
                 style={{ alignItems: "center" }}
               >
                 
-                <Link to="/">
+                <Link to="/" className="brand-link">
                   <h1 style={{ color: "white" }}>
                     <b>Car Rental</b>
                   </h1>
@@ -107,7 +107,13 @@ function HomeLayout(props){
                   >
                     Fleet
                   </a>
-                  <span class="nav-link" style={{ color: "white" }}>Offers</span>
+                  <a
+                    class="nav-link"
+                    href="/home2"
+                    style={{ color: "white" }}
+                  >
+                    Offers
+                  </a>
                   <a
                     class="nav-link"
                     href="/contact"
@@ -135,19 +141,17 @@ function HomeLayout(props){
               <div class="item item-1">
                 <div class="img-fill">
                   <div class="text-content">
-                    <h6 style={{ color: "orangered" }}>
-                      lorem ipsum dolor sit amet!
-                    </h6>
+                    <h6 style={{ color: "orangered" }}>Flexible city rides</h6>
                     <h4>
-                      Quam temporibus accusam <br></br> hic ducimus quia
+                      Rent the right car <br></br> in minutes
                     </h4>
                     <p>
-                      Magni deserunt dolorem consectetur adipisicing elit.
-                      Corporis molestiae optio, laudantium odio quod rerum
-                      maiores, omnis unde quae illo.
+                      Compare trusted vehicles, check availability, and reserve
+                      a clean, comfortable ride for errands, office commutes, or
+                      weekend escapes.
                     </p>
-                    <Button style={{ background: "orangered", color: "black" }}>
-                      <b>contact us</b>
+                    <Button className="hero-button">
+                      <a href="/home2"><b>Explore Fleet</b></a>
                     </Button>
                   </div>
                 </div>
@@ -156,20 +160,17 @@ function HomeLayout(props){
               <div class="item item-2">
                 <div class="img-fill">
                   <div class="text-content">
-                    <h6 style={{ color: "orangered" }}>
-                      magni deserunt dolorem harum quas!
-                    </h6>
+                    <h6 style={{ color: "orangered" }}>Transparent pricing</h6>
                     <h4>
-                      Aliquam iusto harum <br></br> ratione porro odio
+                      Hourly rentals <br></br> without surprises
                     </h4>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      At culpa cupiditate mollitia adipisci assumenda laborum
-                      eius quae quo excepturi, eveniet. Dicta nulla ea beatae
-                      consequuntur?
+                      Choose by budget, comfort, and trip length. Every listing
+                      shows the hourly rate upfront so you can book with total
+                      confidence.
                     </p>
-                    <Button style={{ background: "orangered", color: "black" }}>
-                      <b>Fleet</b>
+                    <Button className="hero-button">
+                      <a href="/home2"><b>View Cars</b></a>
                     </Button>
                   </div>
                 </div>
@@ -178,20 +179,16 @@ function HomeLayout(props){
               <div class="item item-3">
                 <div class="img-fill">
                   <div class="text-content">
-                    <h6 style={{ color: "orangered" }}>
-                      alias officia qui quae vitae natus!
-                    </h6>
+                    <h6 style={{ color: "orangered" }}>Support that stays close</h6>
                     <h4>
-                      Lorem ipsum dolor <br></br> sit amet, consectetur.
+                      Help before, during <br></br> and after your trip
                     </h4>
                     <p>
-                      Vivamus ut tellus mi. Nulla nec cursus elit, id vulputate
-                      mi. Sed nec cursus augue. Phasellus lacinia ac sapien
-                      vitae dapibus. Mauris ut dapibus velit cras interdum nisl
-                      ac urna tempor mollis.
+                      From pickup questions to booking changes, our team keeps
+                      the rental experience smooth so you can focus on the road.
                     </p>
-                    <Button style={{ background: "orangered", color: "black" }}>
-                      <b>Offers</b>
+                    <Button className="hero-button">
+                      <a href="/contact"><b>Contact Us</b></a>
                     </Button>
                   </div>
                 </div>
@@ -201,8 +198,8 @@ function HomeLayout(props){
         </div>
         <div className="mt-5">
           <img src="https://therentalradar.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcars.b43449c7.png&w=828&q=75" alt='img'></img>
-          <p>
-            <b>The cheapest car rental rates are just a click away</b>
+          <p className="partner-copy">
+            <b>Popular makes, practical rates, and booking that fits your schedule.</b>
           </p>
           <div
             className="d-flex justify-content-center mt-5"
@@ -239,14 +236,15 @@ function HomeLayout(props){
                   <div class="right-content">
                     <span>Who we are</span>
                     <h2>
-                      Get to know about <em>our company</em>
+                      Built for simple, dependable <em>daily travel</em>
                     </h2>
                     <p>
-                      Curabitur pulvinar sem a leo tempus facilisis. Sed non
-                      sagittis neque. Nulla conse quat tellus nibh, id molestie
-                      felis sagittis ut. Nam ullamcorper tempus ipsum in cursus
+                      Car Rental helps customers book verified cars for
+                      short trips, planned travel, and last-minute mobility.
+                      Our focus is clear pricing, quick confirmations, and a
+                      fleet that is easy to compare.
                     </p>
-                    <a href="about.html" class="filled-button">
+                    <a href="/about" class="filled-button">
                       Read More
                     </a>
                   </div>
@@ -260,9 +258,9 @@ function HomeLayout(props){
           <div className="container">
             <div className="section-heading">
               <h2>
-                Read our <em>Blog</em>
+                Rental <em>Tips</em>
               </h2>
-              <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
+              <span>Guides to help you choose, book, and drive smarter</span>
             </div>
 
             <div className="row" id="tabs">
@@ -277,8 +275,8 @@ function HomeLayout(props){
                         showTab("tabs-1");
                       }}
                     >
-                      Lorem ipsum dolor sit amet, consectetur adipisicing <br/>
-                      <small>John Doe &nbsp;|&nbsp; 27.07.2020 10:10</small>
+                      How to pick the right car for a weekend trip <br/>
+                      <small>Car Rental Team &nbsp;|&nbsp; 18.04.2026</small>
                     </a>
                   </li>
                   <li>
@@ -289,8 +287,8 @@ function HomeLayout(props){
                         showTab("tabs-2");
                       }}
                     >
-                      Mauris lobortis quam id dictum dignissim <br />
-                      <small>John Doe &nbsp;|&nbsp; 27.07.2020 10:10</small>
+                      What to check before confirming a rental <br />
+                      <small>Car Rental Team &nbsp;|&nbsp; 12.04.2026</small>
                     </a>
                   </li>
                   <li>
@@ -301,14 +299,14 @@ function HomeLayout(props){
                         showTab("tabs-3");
                       }}
                     >
-                      Class aptent taciti sociosqu ad litora torquent per <br />
-                      <small>John Doe &nbsp;|&nbsp; 27.07.2020 10:10</small>
+                      Hourly rentals vs day rentals: when each works best <br />
+                      <small>Car Rental Team &nbsp;|&nbsp; 05.04.2026</small>
                     </a>
                   </li>
                 </ul>
                 <br />
                 <div className="text-center">
-                  <a href="blog.html" className="filled-button">
+                  <a href="/home2" className="filled-button">
                     Read More
                   </a>
                 </div>
@@ -324,16 +322,14 @@ function HomeLayout(props){
                         alt=""
                       />
                       <h4>
-                        <a href="blog-details.html">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing.
+                        <a href="/home2">
+                          How to pick the right car for a weekend trip
                         </a>
                       </h4>
                       <p>
-                        Sed ut dolor in augue cursus ultrices. Vivamus mauris
-                        turpis, auctor vel facilisis in, tincidunt vel diam. Sed
-                        vitae scelerisque orci. Nunc non magna orci. Aliquam
-                        commodo mauris ante, quis posuere nibh vestibulum sit
-                        amet.
+                        Match the car to the people, luggage, road conditions,
+                        and comfort level you need. Compact cars are great for
+                        city routes, while SUVs make longer drives feel easier.
                       </p>
                     </article>
                   )}
@@ -345,20 +341,14 @@ function HomeLayout(props){
                         alt=""
                       />
                       <h4>
-                        <a href="blog-details.html">
-                          Mauris lobortis quam id dictum dignissim
+                        <a href="/home2">
+                          What to check before confirming a rental
                         </a>
                       </h4>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Et voluptatum doloribus voluptatem fugit dolores quam,
-                        quaerat minima velit optio exercitationem temporibus
-                        officia quibusdam placeat possimus quos enim provident
-                        numquam aspernatur vero, nulla laborum, fugiat itaque
-                        illo qui? Ducimus quaerat soluta sit doloremque
-                        laudantium reiciendis ad ratione, laboriosam eligendi?
-                        Neque architecto quibusdam alias minus nihil corrupti,
-                        maiores id hic deleniti eius.
+                        Review the rate, pickup timing, vehicle image, seating,
+                        and booking window before you pay. A quick check keeps
+                        your trip predictable from the first kilometer.
                       </p>
                     </article>
                   )}
@@ -370,18 +360,14 @@ function HomeLayout(props){
                         alt=""
                       />
                       <h4>
-                        <a href="blog-details.html">
-                          Class aptent taciti sociosqu ad litora torquent per
+                        <a href="/home2">
+                          Hourly rentals vs day rentals: when each works best
                         </a>
                       </h4>
                       <p>
-                        Mauris lobortis quam id dictum dignissim. Donec
-                        pellentesque erat dolor, cursus dapibus turpis hendrerit
-                        quis. Suspendisse at suscipit arcu. Nulla sed erat
-                        lectus. Nulla facilisi. In sit amet neque sapien. Donec
-                        scelerisque mi at gravida efficitur. Nunc lacinia a est
-                        eu malesuada. Curabitur eleifend elit sapien, sed
-                        pulvinar orci luctus eget.{" "}
+                        Hourly plans are ideal for errands, meetings, and short
+                        visits. Longer day plans make more sense when your route
+                        has multiple stops or uncertain return times.
                       </p>
                     </article>
                   )}
@@ -395,8 +381,8 @@ function HomeLayout(props){
             <div class="row">
               <div class="col-md-12">
                 <div class="section-heading">
-                  <h2>What they say <em>about us</em></h2>
-                  <span>Testimonials from our greatest clients</span>
+                  <h2>What drivers say <em>about us</em></h2>
+                  <span>Real feedback from frequent renters</span>
                 </div>
               </div>
               <div class="col-md-12">
@@ -406,8 +392,8 @@ function HomeLayout(props){
                     <div class="inner-content">
                     <img src="https://images.pexels.com/photos/633432/pexels-photo-633432.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" style={{aspectRatio:'10/9'}}/>
                       <h4>Ambar Gupta</h4>
-                      <span>Chief Financial Analyst</span>
-                      <p>"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores voluptatibus aliquid, magnam perferendis dolor mollitia corporis suscipit quo expedita porro placeat non nisi eum minus earum eveniet ipsam quae error!"</p>
+                      <span>Business Traveller</span>
+                      <p>"The car was ready on time, the hourly price was clear, and the booking took less than five minutes."</p>
                     </div>
                   </div>
                   
@@ -415,8 +401,8 @@ function HomeLayout(props){
                     <div class="inner-content">
                     <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" style={{aspectRatio:'10/9'}}/>
                       <h4>Mayank Singh</h4>
-                      <span>Market Specialist</span>
-                      <p>"Ut ultricies maximus turpis, in sollicitudin ligula posuere vel. Donec finibus maximus neque, vitae egestas quam imperdiet nec. Proin nec mauris eu tortor consectetur tristique."</p>
+                      <span>Weekend Explorer</span>
+                      <p>"I could compare cars quickly and choose one that had enough space for the whole family."</p>
                     </div>
                   </div>
                   
@@ -424,8 +410,8 @@ function HomeLayout(props){
                     <div class="inner-content">
                     <img src="https://images.pexels.com/photos/733767/pexels-photo-733767.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" style={{aspectRatio:'10/9'}}/>
                       <h4><b>Anurag</b></h4>
-                      <span>Marketing Head</span>
-                      <p>"Ut ultricies maximus turpis, in sollicitudin ligula posuere vel. Donec finibus maximus neque, vitae egestas quam imperdiet nec. Proin nec mauris eu tortor consectetur tristique."</p>
+                      <span>Marketing Lead</span>
+                      <p>"Support was responsive when I needed to adjust my pickup time. The experience felt simple and reliable."</p>
                     </div>
                   </div>
                   
@@ -433,8 +419,8 @@ function HomeLayout(props){
                     <div class="inner-content">
                     <img src="https://images.pexels.com/photos/13861/IMG_3496bfree.jpg?auto=compress&cs=tinysrgb&w=600" alt="" style={{aspectRatio:'10/9'}}/>
                       <h4>Shivam </h4>
-                      <span>Chief Accountant</span>
-                      <p>"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis expedita velit minus a, sit aspernatur enim neque doloribus cumque harum eveniet placeat dignissimos earum temporibus deleniti nesciunt mollitia natus maxime!"</p>
+                      <span>Finance Consultant</span>
+                      <p>"The pricing was easy to understand, and the vehicle matched the listing exactly. I would book again."</p>
                     </div>
                   </div>
                   
@@ -471,8 +457,8 @@ function HomeLayout(props){
           <div class="container">
             <div class="row">
               <div class="col-md-3 footer-item">
-                <h4>Car Rental Website</h4>
-                <p>Reliable car rental services at affordable prices.</p>
+                <h4>Car Rental</h4>
+                <p>Reliable cars, clear hourly pricing, and quick booking for everyday travel.</p>
                 <ul class="social-icons">
                   <li rel="nofollow" target="_blank"><Link to="https://www.linkedin.com/in/mayank-singh-2097012a5/">
                 <LinkedinOutlined />
@@ -488,11 +474,11 @@ function HomeLayout(props){
               <div class="col-md-3 footer-item">
                 <h4>Useful Links</h4>
                 <ul class="menu-list">
-                <li><span>Nulla nec cursus elit</span></li>
-                <li><span>Vivamus ut tellus mi</span></li>
-                <li><span>Vulputate sed nec</span></li>
-                <li><span>Cursus augue hasellus</span></li>
-                <li><span>Lacinia ac sapien</span></li>
+                <li><a href="/home2">Browse Fleet</a></li>
+                <li><a href="/userbookings">My Bookings</a></li>
+                <li><a href="/contact">Customer Support</a></li>
+                <li><a href="/about">About Car Rental</a></li>
+                <li><a href="/home2">Current Offers</a></li>
 
                 </ul>
               </div>
@@ -500,8 +486,8 @@ function HomeLayout(props){
                 <h4>Additional Pages</h4>
                 <ul class="menu-list">
                   <li><a href="/about">About Us</a></li>
-                  <li><a href="/about">Blog</a></li>
-                  <li><a href="/about">FAQ</a></li>
+                  <li><a href="/home2">Fleet</a></li>
+                  <li><a href="/contact">FAQ</a></li>
                   <li><a href="/contact">Contact Us</a></li>
                   <li><a href="/about">Terms</a></li>
                 </ul>
@@ -544,7 +530,7 @@ function HomeLayout(props){
             <div class="row">
               <div class="col-md-12">
                 <p>
-                    Copyright © 2025  Mayank Singh
+                    Copyright (c) 2026 Car Rental
                 </p>
               </div>
             </div>
@@ -556,3 +542,4 @@ function HomeLayout(props){
 }
 
 export default HomeLayout
+

@@ -11,7 +11,7 @@ function Contact(){
         <div class="row">
           <div class="col-md-12">
             <h1>Contact Us</h1>
-            <span>feel free to send us a message now!</span>
+            <span>Questions about a car, booking, or pickup? We are here to help.</span>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@ function Contact(){
               <PhoneFilled  />
               <h4>Phone</h4>
               <p>Call us anytime for inquiries.</p>
-              <a href="tel:+91706xxxxxxx">+91 706xxxxxxx</a>
+              <a href="tel:+91706xxxxxxx">+91 7067038682</a>
             </div>
           </div>
           <div className="col-md-4">
@@ -34,7 +34,7 @@ function Contact(){
               <MailFilled />
               <h4>Email</h4>
               <p>Send us a message anytime.</p>
-              <a href="mailto:mayanksi0928@gmail.com">mayank@gmail.com</a>
+              <a href="mailto:mayanksi0928@gmail.com">mayank7067038682@gmail.com</a>
             </div>
           </div>
           <div className="col-md-4">
@@ -56,7 +56,7 @@ function Contact(){
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Send us a <em>message</em></h2>
-              <span>Suspendisse a ante in neque iaculis lacinia</span>
+              <span>Tell us what you need and we will get back with clear next steps</span>
             </div>
           </div>
           <div class="col-md-12">
@@ -115,7 +115,6 @@ function Contact(){
           src="https://maps.google.com/maps?width=600&amp;height=500&amp;hl=en&amp;q=juet&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           style={{ border: "none" }}
         ></iframe>
-        <a href="https://sprunkin.com/">Sprunki</a>
       </div>
     </div>
     </DefaultLayout>

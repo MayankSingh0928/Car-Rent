@@ -58,7 +58,7 @@ function DefaultLayout(props){
                 <h1>
                   <b>
                     <Link to="/" style={{ color: "orangered" }}>
-                      Cars Rental
+                      Car Rental
                     </Link>
                   </b>
                 </h1>
@@ -95,8 +95,8 @@ function DefaultLayout(props){
           <div className="container">
             <div className="row">
               <div className="col-md-4 footer-item">
-                <h4>Car Rental Website</h4>
-                <p>Reliable car rental services at affordable prices.</p>
+                <h4>Car Rental</h4>
+                <p>Reliable cars, transparent hourly rates, and quick booking for everyday travel.</p>
                 <ul className="social-icons">
                   <li rel="nofollow" target="_blank">
                     
@@ -131,7 +131,7 @@ function DefaultLayout(props){
                     <a href="/">Rental Guide</a>
                   </li>
                   <li>
-                    <span>FAQs</span>
+                    <a href="/contact">FAQs</a>
                   </li>
                 </ul>
               </div>
@@ -142,10 +142,10 @@ function DefaultLayout(props){
                     <a href="/about">About Us</a>
                   </li>
                   <li>
-                    <span>Terms & Conditions</span>
+                    <span>Rental Terms</span>
                   </li>
                   <li>
-                    <span>Privacy Policy</span>
+                    <span>Privacy & Safety</span>
                   </li>
                 </ul>
               </div>

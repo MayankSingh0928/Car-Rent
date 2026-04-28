@@ -94,7 +94,11 @@ function Home(){
             {loading === true && (<Spinner/>)}
             <Row className='mt-5 ml-5' style={{paddingLeft:'100px'}}>
                 <Col lg ={20} sm={24} className='d-flex justify-content-left'>
-                 <h1><b>Our Best</b></h1>
+                 <div className="section-intro">
+                    <span>Featured cars</span>
+                    <h1><b>Popular picks for your next drive</b></h1>
+                    <p>Clean, comfortable cars with simple hourly pricing and fast booking.</p>
+                 </div>
                 </Col>
 
             </Row>
@@ -109,7 +113,7 @@ function Home(){
                                         <p><b>{car.name}</b></p>
                                         <p>Rent Per Hour <b>{car.rentPerHour}</b>/-</p>
                                         <br />
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, unde?</p>
+                                        <p>Ideal for city runs, business meetings, and comfortable short-distance travel.</p>
                                     </div>
                                     <br></br>
                                     <div>
@@ -126,7 +130,7 @@ function Home(){
 
             <Row justify="center">
                 <div className='mt-5'>
-                    <Link to='/home2' arrow={{pointAtCenter: true,}}><Button><b>More Car</b></Button></Link>
+                    <Link to='/home2' arrow={{pointAtCenter: true,}}><Button className="browse-more-btn"><b>View Full Fleet</b></Button></Link>
                 </div>
             </Row>
         </HomeLayout>

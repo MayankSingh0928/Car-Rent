@@ -5,7 +5,8 @@ body {
   font-family: "Montserrat", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: azure;
+  background-color: #f4f7fb;
+  color: #1d2633;
 }
 
 code {
@@ -14,7 +15,7 @@ code {
 }
 
 .bs1{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: 0 18px 45px rgba(16, 24, 40, 0.12);
 }
 .spinner{
   position: absolute;
@@ -41,6 +42,7 @@ p{
 }
 .header{
   padding: 10px;
+  backdrop-filter: blur(14px);
   
 }
 .header .ant-btn{
@@ -54,46 +56,60 @@ p{
 }
 
 .car{
-  border-radius: 5px;
+  border-radius: 8px;
   margin-top: 100px;
-  height: 170px;
+  min-height: 230px;
   transition: 0.3s;
+  background: #fff;
+  border: 1px solid rgba(19, 39, 63, 0.08);
+  overflow: visible;
 }
 .car1{
-  border-radius: 5px;
+  border-radius: 8px;
   margin-top: 100px;
-  height: 170px;
+  min-height: 250px;
   transition: 0.3s;
+  background: #fff;
+  border: 1px solid rgba(19, 39, 63, 0.08);
+  overflow: visible;
 }
 .car:hover{
-  height: 220px;
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px rgba(16, 24, 40, 0.14);
 }
 .car1:hover{
-  height: 325px;
+  transform: translateY(-8px);
+  box-shadow: 0 22px 48px rgba(16, 24, 40, 0.14);
 }
 .car:hover>.car-content{ 
   opacity: 1;
-  transform: translateY(-30px);
+  transform: translateY(-35px);
 }
 .car1:hover>.car-content1{ 
   opacity: 1;
-  transform: translateY(-30px);
+  transform: translateY(-45px);
 }
 .carimg{
   height: 180px;                   
-  width: 280px;
-  border-radius: 5px;
+  width: 100%;
+  max-width: 280px;
+  object-fit: contain;
+  border-radius: 8px;
   transform: translateY(-50px);
 }
 .car-content{
-  transform: translateY(-200px);
-  opacity: 0;
+  transform: translateY(-35px);
+  opacity: 1;
   transition: 0.3s;
+  gap: 14px;
+  padding: 0 10px 16px;
 }
 .car-content1{
-  transform: translateY(-250px);
-  opacity: 0;
+  transform: translateY(-45px);
+  opacity: 1;
   transition: 0.3s;
+  gap: 14px;
+  padding: 0 12px 18px;
 }
 /* login & registration page */
 .login{
@@ -404,6 +420,74 @@ ul.slick-dots {
   	transform: translate(-50%, -50%);
 }
 
+.brand-link {
+  text-decoration: none !important;
+}
+
+.nav-link {
+  font-weight: 700;
+  margin: 0 10px;
+  padding: 8px 4px;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: orangered !important;
+  transform: translateY(-2px);
+}
+
+.hero-button,
+.browse-more-btn {
+  background: orangered !important;
+  color: #fff !important;
+  border: 1px solid orangered !important;
+  border-radius: 999px !important;
+  height: 42px !important;
+  padding: 0 24px !important;
+  box-shadow: 0 14px 30px rgba(255, 69, 0, 0.28) !important;
+}
+
+.hero-button a,
+.browse-more-btn a {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.section-intro {
+  text-align: left;
+  max-width: 760px;
+}
+
+.section-intro span {
+  color: orangered;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.section-intro h1 {
+  color: #172033;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.section-intro p,
+.partner-copy {
+  color: #5d6878;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.fleet-toolbar {
+  align-items: flex-end;
+  gap: 24px;
+}
+
 .Modern-Slider .item h6 {
   margin-bottom: 15px;
   font-size: 22px;
@@ -605,12 +689,19 @@ a.filled-button {
 	width: 100%;
 	padding: 20px;
 	display: inline-block;
-	background-color: #a4c639;
-  font-size: 18px;
-  color: #121212;
+	background-color: #fff;
+  border-left: 4px solid orangered;
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(16, 24, 40, 0.08);
+  font-size: 17px;
+  color: #172033;
   letter-spacing: 0.5px;
   font-weight: 700;
   transition: all 0.3s;
+}
+#tabs ul li a:hover {
+  transform: translateX(6px);
+  color: orangered;
 }
 #tabs ul li a i {
 	float: right;
@@ -715,18 +806,19 @@ a.filled-button {
 
 .testimonials {
 	margin-top: 120px;
-	background-color: azure;
+	background-color: #eef5f8;
   background-size: cover;
 	background-image: url(https://images.pexels.com/photos/88630/pexels-photo-88630.jpeg?auto=compress&cs=tinysrgb&w=600);
 	padding: 140px 0px;
 }
 .testimonial-item .inner-content {
 	text-align: center;
-  backdrop-filter: blur(100px);
-	/* background-color:#918c8c;	 */
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(16px);
 	padding: 30px;
-	border-radius: 30px;
-  /* width: 100px; */
+	border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 20px 46px rgba(16, 24, 40, 0.16);
 }
 .testimonial-item p {
 	font-size: 14px;
@@ -753,7 +845,7 @@ a.filled-button {
 }
 /* Footer */
 footer {
-	background-color: #232323;
+	background-color: #172033;
 	padding: 80px 0px;
 	color: #fff;
 }
@@ -957,8 +1049,12 @@ footer .contact-form button.filled-button:hover {
 
 .contact-information .contact-item {
 	padding: 60px 30px;
-	background-color: #f7f7f7;
+	background-color: #fff;
 	text-align: center;
+  border-radius: 8px;
+  border: 1px solid rgba(19, 39, 63, 0.08);
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.08);
+  min-height: 280px;
 }
 
 .contact-information .contact-item i {
@@ -980,7 +1076,7 @@ footer .contact-form button.filled-button:hover {
 
 .contact-information .contact-item a {
 	font-weight: 600;
-	color: #a4c639;
+	color: orangered;
 	font-size: 15px;
 }
 
@@ -1108,7 +1204,7 @@ footer .contact-form button.filled-button:hover {
 /* team */
 
 .team {
-	background-color: #f7f7f7;
+	background-color: #f4f7fb;
 	margin-top: 90px;
   margin-bottom: 90px;
 	padding: 120px 0px;
@@ -1117,11 +1213,16 @@ footer .contact-form button.filled-button:hover {
 .team-item img {
 	width: 100%;
 	overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
 }
 
 .team-item .down-content {
 	background-color: #fff;
 	padding: 30px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 18px 40px rgba(16, 24, 40, 0.08);
+  min-height: 250px;
 }
 
 .team-item .down-content h4 {
@@ -1142,4 +1243,88 @@ footer .contact-form button.filled-button:hover {
 
 .team-item .down-content p {
 	margin-bottom: 20px;
+}
+
+@media (max-width: 992px) {
+  .header[style] {
+    padding: 28px !important;
+  }
+
+  .header .d-flex {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  .Modern-Slider .text-content {
+    width: 86%;
+  }
+
+  .Modern-Slider .item h4 {
+    font-size: 34px;
+    letter-spacing: 1px;
+  }
+
+  .fleet-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .header[style] {
+    height: auto !important;
+    padding: 18px !important;
+  }
+
+  .brand-link h1 {
+    font-size: 22px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    margin: 0 5px;
+  }
+
+  .Modern-Slider .item .img-fill {
+    height: 86vh;
+  }
+
+  .Modern-Slider .item h6 {
+    font-size: 14px;
+  }
+
+  .Modern-Slider .item h4 {
+    font-size: 28px;
+    line-height: 1.2;
+  }
+
+  .Modern-Slider .item p {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  .section-intro h1 {
+    font-size: 24px;
+  }
+
+  .car,
+  .car1 {
+    margin: 80px 16px 0;
+  }
+
+  .tabs-content {
+    margin-left: 0;
+    margin-top: 28px;
+  }
+
+  .tabs-content img {
+    height: auto;
+  }
+
+  .fun-facts,
+  .testimonials,
+  .contact-us,
+  .team {
+    padding: 80px 0;
+  }
 }
