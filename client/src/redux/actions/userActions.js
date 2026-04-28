@@ -1,9 +1,9 @@
-import axios from 'axios';
+import api from '../../utils/api';
 import { message } from 'antd';
 export const userLogin=(reqObj)=>async dispatch=>{
     dispatch({type : 'LOADING', payload:true})
     try{
-        const response = await axios.post('/api/users/login',reqObj)
+        const response = await api.post('/api/users/login',reqObj)
         localStorage.setItem('user', JSON.stringify(response.data))
         message.success('Login Successfull');
         setTimeout(()=>{
@@ -23,7 +23,7 @@ export const userLogin=(reqObj)=>async dispatch=>{
 export const userRegister=(reqObj)=>async dispatch=>{
     dispatch({type : 'LOADING', payload:true})
     try{
-        await axios.post('/api/users/register',reqObj)
+        await api.post('/api/users/register',reqObj)
         
         message.success('Registration Successfull');
         
@@ -48,7 +48,7 @@ export const userRegister=(reqObj)=>async dispatch=>{
 export const userLoginAdmin=(reqObj)=>async dispatch=>{
     dispatch({type : 'LOADING', payload:true})
     try{
-        const response = await axios.post('/api/users/loginadmin',reqObj)
+        const response = await api.post('/api/users/loginadmin',reqObj)
         localStorage.setItem('user', JSON.stringify(response.data))
         message.success('Login Successfull');
         setTimeout(()=>{

@@ -1,11 +1,11 @@
-import axios from 'axios';
+import api from '../../utils/api';
 import { message } from 'antd';
 
 export const bookCar = (reqObj) => async (dispatch) => {
   dispatch({ type: 'LOADING', payload: true });
 
   try {
-    await axios.post('/api/bookings/bookcar', reqObj);
+    await api.post('/api/bookings/bookcar', reqObj);
     dispatch({ type: 'LOADING', payload: false });
     message.success('Your car booked successfully');
     setTimeout(() => {
@@ -22,7 +22,7 @@ export const getAllBookings = () => async (dispatch) => {
   dispatch({ type: 'LOADING', payload: true });
 
   try {
-    const response = await axios.get('/api/bookings/getallbookings', {
+    const response = await api.get('/api/bookings/getallbookings', {
       headers: {
         'Cache-Control': 'no-cache',
       },
@@ -43,7 +43,7 @@ export const deleteBooking = (bookingId) => async (dispatch) => {
   dispatch({ type: 'LOADING', payload: true });
 
   try {
-    await axios.post('/api/bookings/deletebooking', { bookingId });
+    await api.post('/api/bookings/deletebooking', { bookingId });
     message.success('Booking deleted successfully');
     await dispatch(getAllBookings()); // Ensure bookings refresh after deletion
   } catch (error) {

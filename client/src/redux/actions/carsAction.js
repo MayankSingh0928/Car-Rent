@@ -1,5 +1,5 @@
 
-import axios from 'axios';
+import api from '../../utils/api';
 import { message } from 'antd';
 
 
@@ -14,7 +14,7 @@ export const getAllCars = () => async (dispatch, getState) => {
   dispatch({ type: 'LOADING', payload: true });
 
   try {
-    const response = await axios.get('/api/cars/getallcars', {
+    const response = await api.get('/api/cars/getallcars', {
       headers: {
         'Cache-Control': 'no-cache',
       },
@@ -36,7 +36,7 @@ export const addCar=(reqObj)=>async dispatch=>{
   dispatch({type: 'LOADING' , payload:true})
 
   try {
-       await axios.post('/api/cars/addcar' , reqObj)
+       await api.post('/api/cars/addcar' , reqObj)
      
        dispatch({type: 'LOADING' , payload:false})
        message.success('New car added successfully')
@@ -55,7 +55,7 @@ export const editCar=(reqObj)=>async dispatch=>{
   dispatch({type: 'LOADING' , payload:true})
 
   try {
-       await axios.post('/api/cars/editcar' , reqObj)
+       await api.post('/api/cars/editcar' , reqObj)
      
        dispatch({type: 'LOADING' , payload:false})
        message.success('Car edited successfully')
@@ -74,7 +74,7 @@ export const deleteCar=(reqObj)=>async dispatch=>{
   dispatch({type: 'LOADING' , payload:true})
 
   try {
-       await axios.post('/api/cars/deletecar' , reqObj)
+       await api.post('/api/cars/deletecar' , reqObj)
      
        dispatch({type: 'LOADING' , payload:false})
        message.success('Car deleted successfully')
